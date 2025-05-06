@@ -14,7 +14,7 @@ client = AsyncOpenAI(
 cl.instrument_openai()
 
 settings = {
-    "model": "google/gemini-2.0-flash-lite-001",
+    "model": "openai/gpt-4.1-mini",
     "temperature": 0,
     # ... more settings
 }
@@ -24,7 +24,7 @@ async def on_message(message: cl.Message):
     response = await client.chat.completions.create(
         messages=[
             {
-                "content": "You are a helpful bot, you always reply in Traditional Chinese",
+                "content": "You are a registered dietitian, you will be providing professional guidance and recommandation",
                 "role": "system"
             },
             {
